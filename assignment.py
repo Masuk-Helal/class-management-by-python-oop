@@ -21,17 +21,14 @@ class StudentDatabase:
 
 
 class Student:
-    def __init__(self, student_id, name, department, is_enrolled=False):
-        # Private attributes
+    def __init__(self, student_id, name, department, is_enrolled = False):
         self.__student_id = student_id
         self.__name = name
         self.__department = department
         self.__is_enrolled = is_enrolled
 
-        # Automatically add to database
         StudentDatabase.add_student(self)
 
-    # Getter (for safe access)
     def get_student_id(self):
         return self.__student_id
 
@@ -55,16 +52,11 @@ class Student:
         print(f"ID: {self.__student_id} Name: {self.__name} Department: {self.__department} Status: {status}")
 
 
-# ----------------------------
-# Create some students manually
-# ----------------------------
 s1 = Student(101, "Rahim Uddin", "CSE")
 s2 = Student(102, "Karim Hasan", "EEE", True)
 s3 = Student(103, "Ayesha Akter", "BBA")
 
-# ----------------------------
-# Menu System
-# ----------------------------
+
 while True:
     print("\n===== Student Management System =====")
     print("1. View All Students")
